@@ -1,0 +1,19 @@
+
+#Docker Installation
+sudo apt-get update
+sudo apt-get install apt-transport-https
+sudo apt-get upgrade -y
+sudo apt install docker.io -y
+sudo usermod -aG docker $USER
+
+#Docker Compose Installation
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+-- Clair Setup
+docker-compose up -d
+docker-compose ps
+docker-compose exec clairctl clairctl analyze -l vulnerables/web-dvwa
+docker-compose exec clairctl clairctl analyze -l busybox
+
