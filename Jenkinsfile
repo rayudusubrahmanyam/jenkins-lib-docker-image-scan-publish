@@ -4,10 +4,13 @@ import com.libdemo.GlobalVars
 pipeline {
     agent any
     environment {
-
     /*registry = `GlobalVars.registryName`
     registryCredential = GlobalVars.registryCredential
     */
+
+    registry = 'rayudusubrahmanyam/myrepository'
+    registryCredential = 'DockerHub'
+
     }
     stages {
         stage('Fetch') {
