@@ -1,5 +1,5 @@
 @Library('Jenkins-shared-global-lib') _
-import com.lib-demo-pro.GlobalVars
+import com.lib_demo_pro.GlobalVars
 
 pipeline {
     agent any
