@@ -5,7 +5,7 @@ pipeline {
     agent any
     environment {
     registry = GlobalVars.registryName
-    registryCredential = GlobalVars.registryCredential
+    registryCredential = "DockerHub"
     }
     stages {
         stage('Fetch') {
