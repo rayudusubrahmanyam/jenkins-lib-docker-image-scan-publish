@@ -2,6 +2,10 @@
 
 pipeline {
     agent any
+    environment {
+    registry = "rayudusubrahmanyam/myrepository"
+    registryCredential = ‘DockerHub’
+    }
     stages {
         stage('Fetch') {
             steps {
@@ -19,10 +23,24 @@ pipeline {
             }
 
         }
+        stage('Building image') {
+          steps{
+            script {
+              docker.build registry + ":$BUILD_NUMBER"
+            }
+          }
+        }
+        /*
         stage('Docker Image') {
             steps {
-              sh 'docker built -t my-maven-app:release-$BUILD_NUMBER .'
+              sh 'docker build -t my-maven-app:release-$BUILD_NUMBER .'
             }
-        }   
+        }  
+        stage('Docker Image Cliar') {
+            steps {
+              sh 'docker build -t my-maven-app:release-$BUILD_NUMBER .'
+            }
+        } 
+        */         
     }
 }
