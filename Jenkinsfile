@@ -1,10 +1,11 @@
 @Library('Jenkins-shared-global-lib') _
+import com.lib-demo-pro.GlobalVars
 
 pipeline {
     agent any
     environment {
-    registry = "rayudusubrahmanyam/myrepository"
-    registryCredential = 'DockerHub'
+    registry = GlobalVars.registryName
+    registryCredential = GlobalVars.registryCredential
     }
     stages {
         stage('Fetch') {
