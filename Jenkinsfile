@@ -1,11 +1,13 @@
 @Library('Jenkins-shared-global-lib') _
-import com.lib_demo_pro.GlobalVars
+import com.libdemo.GlobalVars
 
 pipeline {
     agent any
     environment {
-    registry = GlobalVars.registryName
+
+    /*registry = `GlobalVars.registryName`
     registryCredential = GlobalVars.registryCredential
+    */
     }
     stages {
         stage('Fetch') {
