@@ -17,6 +17,12 @@ pipeline {
             steps {
               sh 'mvn test'
             }
+
         }
+        stage('Docker Image') {
+            steps {
+              sh 'docker built -t my-maven-app:release-$BUILD_NUMBER .'
+            }
+        }   
     }
 }
