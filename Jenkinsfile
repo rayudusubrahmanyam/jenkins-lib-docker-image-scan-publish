@@ -4,7 +4,7 @@ import com.lib_demo_pro.GlobalVars
 pipeline {
     agent any
     environment {
-    registry = GlobalVars.registryName
+    registry = "GlobalVars.registryName"
     registryCredential = "DockerHub"
     }
     stages {
