@@ -4,7 +4,7 @@ pipeline {
     agent any
     environment {
     registry = "rayudusubrahmanyam/myrepository"
-    registryCredential = ‘DockerHub’
+    registryCredential = 'DockerHub'
     }
     stages {
         stage('Fetch') {
